@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Search, Zap, TrendingUp, Star, Award, CheckCircle2, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Search, Zap, TrendingUp, Star, Award, CheckCircle2, ArrowUpRight } from "lucide-react";
 
 export const Features: React.FC = () => {
   const containerVariants = {
@@ -28,9 +28,12 @@ export const Features: React.FC = () => {
             <Award className="w-3.5 h-3.5" />
             <span>Erfolgsfaktoren für Münchner Betriebe</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight mb-3">
             Drei Säulen, die Ihren Betrieb messbar nach vorne bringen
           </h2>
+          <p className="text-slate-600 text-base max-w-2xl mx-auto">
+            Gezielt entwickelt für Handwerk, Dienstleister & Mittelstand in München und der Region.
+          </p>
         </div>
 
         <motion.div
@@ -44,7 +47,7 @@ export const Features: React.FC = () => {
           <motion.div variants={itemVariants}>
             <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col h-full">
               {/* Top Light Blue Graphic Box */}
-              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[170px]">
+              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[175px]">
                 <div className="w-full max-w-[240px] bg-white rounded-2xl p-4 shadow-xl border border-slate-200 font-sans">
                   <div className="flex items-center justify-between text-[10px] text-slate-400 mb-1">
                     <span className="truncate">google.de/search?q=schreinerei+muenchen</span>
@@ -79,7 +82,7 @@ export const Features: React.FC = () => {
           <motion.div variants={itemVariants}>
             <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col h-full">
               {/* Top Light Blue Graphic Box */}
-              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[170px]">
+              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[175px]">
                 <div className="w-full max-w-[240px] bg-slate-950 text-white rounded-2xl p-4 shadow-xl border border-slate-800 font-mono text-xs">
                   <div className="flex items-center justify-between text-[10px] text-slate-400 mb-2">
                     <span className="font-bold text-brand-blue">SPEED SCORE</span>
@@ -112,7 +115,7 @@ export const Features: React.FC = () => {
           <motion.div variants={itemVariants}>
             <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col h-full">
               {/* Top Light Blue Graphic Box */}
-              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[170px]">
+              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[175px]">
                 <div className="w-full max-w-[240px] bg-white rounded-2xl p-4 shadow-xl border border-slate-200 text-left">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-bold text-amber-950">Neue Neukundenanfrage</span>
