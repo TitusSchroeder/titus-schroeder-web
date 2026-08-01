@@ -6,8 +6,8 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          navy: "#0A192F",        // Deep Navy (Primary Text & Dunkle Elemente)
-          navyLight: "#1E293B",   // Secondary Dark Nuance
+          navy: "#0F172A",        // Friendly Deep Slate (Primary Text & Dunkle Elemente)
+          navyLight: "#1E293B",   // Soft Secondary Nuance
           blue: "#1D4ED8",        // Royal Navy-Blue (Akzent & Buttons)
           blueHover: "#1E40AF",   // Hover State
           bg: "#FFFFFF",          // Pure White Background
@@ -20,7 +20,7 @@ const config: Config = {
       },
       boxShadow: {
         glow: "0 0 25px -5px rgba(29, 78, 216, 0.25)",
-        pill: "0 10px 30px -10px rgba(10, 25, 47, 0.08)",
+        pill: "0 10px 30px -10px rgba(15, 23, 42, 0.08)",
       },
     },
   },

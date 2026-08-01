@@ -38,9 +38,9 @@ export const CmsDemo: React.FC = () => {
   };
 
   return (
-    <section id="cms-demo" className="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section id="cms-demo" className="py-20 bg-slate-800 text-white relative overflow-hidden">
       {/* Subtle Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-3 sm:px-6 max-w-6xl relative z-10">
         {/* Section Header */}
@@ -52,7 +52,7 @@ export const CmsDemo: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
             Probieren Sie es selbst aus
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base">
+          <p className="text-slate-200 text-sm sm:text-base">
             Klicken Sie oben rechts im Fenster auf <strong>"Editiermodus starten"</strong> und tippen Sie Ihre Änderungen direkt in die Vorschau-Website ein.
           </p>
         </div>
@@ -164,7 +164,7 @@ export const CmsDemo: React.FC = () => {
           </div>
 
           {/* REAL WEBSITE PREVIEW AREA (Carpentry Munich) */}
-          <div className="relative min-h-[480px] sm:min-h-[540px] flex flex-col justify-between bg-slate-900 text-white overflow-hidden">
+          <div className="relative min-h-[480px] sm:min-h-[540px] flex flex-col justify-between bg-slate-800 text-white overflow-hidden">
             {/* KI-Generated Hero Background Image */}
             <div
               className="absolute inset-0 bg-cover bg-center transition-all duration-700 opacity-60"
@@ -172,7 +172,7 @@ export const CmsDemo: React.FC = () => {
             />
 
             {/* Dark Overlay for High Contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/70 to-slate-950/50 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-800/70 to-slate-900/50 pointer-events-none" />
 
             {/* Real Website Header Navigation */}
             <div className="relative z-10 p-6 sm:p-8 flex items-center justify-between border-b border-white/10">
@@ -250,7 +250,7 @@ export const CmsDemo: React.FC = () => {
             </div>
 
             {/* Real Website Bottom Footer Bar */}
-            <div className="relative z-10 p-4 sm:p-6 border-t border-white/10 bg-slate-950/60 flex items-center justify-between text-xs text-slate-400 font-medium">
+            <div className="relative z-10 p-4 sm:p-6 border-t border-white/10 bg-slate-900/80 flex items-center justify-between text-xs text-slate-400 font-medium">
               <span>© Obermeier Holzmanufaktur München · Handwerkskammer München</span>
               {isEditing ? (
                 <span className="text-amber-400 font-bold flex items-center gap-1">
