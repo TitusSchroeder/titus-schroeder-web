@@ -80,7 +80,7 @@ export const Features: React.FC = () => {
             </Card>
           </motion.div>
 
-          {/* SÄULE 2: SPEED (Modern Light Design) */}
+          {/* SÄULE 2: SPEED (Minimale Ladezeit & Performance) */}
           <motion.div variants={itemVariants}>
             <Card className="h-full flex flex-col justify-between p-8 bg-white border border-slate-200 hover:border-brand-blue/40 hover:shadow-lg transition-all">
               <div>
@@ -94,7 +94,7 @@ export const Features: React.FC = () => {
                 </div>
 
                 <h3 className="text-2xl font-bold text-brand-navy mb-3">
-                  Höchste Ladezeit & Speed
+                  Minimale Ladezeit & Speed
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
                   Ladezeiten unter 0,5 Sekunden. Keine trägen Baukästen oder überladenen Datenbanken im Hintergrund.

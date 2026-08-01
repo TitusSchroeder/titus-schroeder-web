@@ -2,7 +2,7 @@
   "hero": {
     "badge": "Titus Schröder — Digital Studio · München",
     "h1": "Schnelle, moderne Websites, die in München gefunden werden – und Kunden überzeugen.",
-    "subline": "Ich entwickle maßgeschneiderte Webauftritte für lokale Unternehmen. Ohne träge Systeme oder Backend-Chaos – dafür mit maximaler Ladezeit, messbarer Google-Sichtbarkeit und intuitiver Direkt-Bearbeitung.",
+    "subline": "Ich entwickle maßgeschneiderte Webauftritte für lokale Unternehmen. Ohne träge Systeme oder Backend-Chaos – dafür mit minimaler Ladezeit, messbarer Google-Sichtbarkeit und intuitiver Direkt-Bearbeitung.",
     "ctaPrimary": "Projekt anfragen",
     "ctaSecondary": "Seite jetzt selbst bearbeiten ↓"
   },
@@ -16,7 +16,7 @@
     {
       "id": "speed",
       "icon": "Zap",
-      "title": "Höchste Ladezeit & Performance",
+      "title": "Minimale Ladezeit & Performance",
       "description": "Ladezeiten unter 0,5 Sekunden. Keine trägen Baukästen oder überladenen Datenbanken."
     },
     {
