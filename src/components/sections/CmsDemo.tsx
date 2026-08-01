@@ -48,7 +48,7 @@ export const CmsDemo: React.FC = () => {
         <div className="rounded-2xl shadow-2xl border border-slate-200 overflow-hidden bg-white">
 
           {/* Browser Chrome */}
-          <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center justify-between gap-3">
+          <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center justify-between gap-3 relative">
             {/* Traffic lights + URL */}
             <div className="flex items-center gap-3 min-w-0">
               <div className="flex items-center gap-1.5 shrink-0">
@@ -60,6 +60,46 @@ export const CmsDemo: React.FC = () => {
                 https://obermeier-holzmanufaktur.de
               </span>
             </div>
+
+            {/* Hand-drawn arrow pointing to Bearbeiten button — only visible when not editing */}
+            {!isEditing && (
+              <motion.div
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="absolute right-[108px] -top-10 hidden sm:block pointer-events-none z-20"
+              >
+                <svg
+                  width="72"
+                  height="52"
+                  viewBox="0 0 72 52"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-brand-blue"
+                >
+                  {/* Hand-drawn curved arrow body */}
+                  <path
+                    d="M 8,6 C 10,6 20,4 32,10 C 46,17 58,30 62,44"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                    style={{ strokeDasharray: 140, strokeDashoffset: 0 }}
+                  />
+                  {/* Arrowhead fork — hand-drawn style */}
+                  <path
+                    d="M 52,42 L 62,46 L 58,34"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                </svg>
+              </motion.div>
+            )}
 
             {/* Controls */}
             <div className="flex items-center gap-2 ml-auto shrink-0">
