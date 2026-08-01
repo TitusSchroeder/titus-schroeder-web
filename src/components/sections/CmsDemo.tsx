@@ -2,32 +2,24 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Edit3, Save, Lock, Unlock, Sparkles, CheckCircle2, RotateCcw, Phone, ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Edit3, Save, RotateCcw, Phone, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 export const CmsDemo: React.FC = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [savedState, setSavedState] = useState(false);
 
-  // Default editable content for the authentic Munich Carpentry business
-  const defaultHeadline = "Obermeier Holzmanufaktur — Meisterbetrieb München";
-  const defaultSubline = "Maßgeschneiderte Möbel & edler Innenausbau aus Münchner Meisterhand. Seit 1998.";
-  const defaultCta = "Jetzt Angebot anfordern";
+  const defaultHeadline = "Obermeier Holzmanufaktur";
+  const defaultSubline = "Maßgefertigte Möbel aus Münchner Meisterhand. Seit 1998.";
+  const defaultCta = "Angebot anfordern";
 
   const [headline, setHeadline] = useState(defaultHeadline);
   const [subline, setSubline] = useState(defaultSubline);
   const [cta, setCta] = useState(defaultCta);
 
-  const handleToggleEdit = () => {
-    setIsEditing(!isEditing);
-    setSavedState(false);
-  };
-
   const handleSave = () => {
     setSavedState(true);
-    setTimeout(() => {
-      setSavedState(false);
-    }, 4000);
+    setIsEditing(false);
+    setTimeout(() => setSavedState(false), 3000);
   };
 
   const handleReset = () => {
@@ -38,227 +30,174 @@ export const CmsDemo: React.FC = () => {
   };
 
   return (
-    <section id="cms-demo" className="py-20 bg-slate-900 text-white relative overflow-hidden">
-      {/* Subtle Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/15 rounded-full blur-3xl pointer-events-none" />
+    <section id="cms-demo" className="py-24 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
 
-      <div className="container mx-auto px-3 sm:px-6 max-w-6xl relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 relative">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-blue text-white font-bold text-xs sm:text-sm mb-3 shadow-glow">
-            <Sparkles className="w-4 h-4" />
-            <span>Direkt-Bearbeitung Live-Demo</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
-            Probieren Sie es selbst aus
+        {/* Section Header — minimal */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+            Ihre Website — direkt bearbeitbar
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base">
-            Klicken Sie oben rechts im Fenster auf <strong>"Editiermodus starten"</strong> und tippen Sie Ihre Änderungen direkt in die Vorschau-Website ein.
+          <p className="text-slate-500 text-base max-w-lg mx-auto">
+            Kein Backend, kein Login. Klicken Sie auf{" "}
+            <span className="font-semibold text-slate-700">Bearbeiten</span> und tippen Sie einfach los.
           </p>
         </div>
 
-        {/* SINGLE CLEAN BROWSER WINDOW Showcase */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-300 overflow-hidden text-brand-navy relative">
-          {/* Top Browser Bar + Integrated Controls */}
-          <div className="bg-slate-100 border-b border-slate-200 px-4 py-3 flex flex-wrap items-center justify-between gap-3 relative">
-            <div className="flex items-center gap-3 shrink-0">
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-rose-400 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block" />
+        {/* Browser Window */}
+        <div className="rounded-2xl shadow-2xl border border-slate-200 overflow-hidden bg-white">
+
+          {/* Browser Chrome */}
+          <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center justify-between gap-3">
+            {/* Traffic lights + URL */}
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="flex items-center gap-1.5 shrink-0">
+                <span className="w-3 h-3 rounded-full bg-rose-400" />
+                <span className="w-3 h-3 rounded-full bg-amber-400" />
+                <span className="w-3 h-3 rounded-full bg-emerald-400" />
               </div>
-              <span className="text-xs text-slate-500 font-mono hidden sm:inline-block bg-white px-3 py-1 rounded-full border border-slate-200 font-semibold">
+              <span className="text-xs text-slate-400 font-mono truncate hidden sm:block bg-white border border-slate-200 px-3 py-1 rounded-full">
                 https://obermeier-holzmanufaktur.de
               </span>
             </div>
 
-            {/* Pure GREEN Curved Arrow pointing from header onto the Edit Button (NO TEXT) */}
-            {!isEditing && (
-              <div className="hidden lg:block absolute -top-10 right-48 z-30 pointer-events-none">
-                <svg
-                  className="w-16 h-16 text-emerald-500 animate-bounce"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M 20,10 Q 70,10 75,55"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M 60,45 L 75,60 L 90,45"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-            )}
-
-            {/* Action Bar inside Header */}
-            <div className="flex items-center gap-3 ml-auto z-10">
+            {/* Controls */}
+            <div className="flex items-center gap-2 ml-auto shrink-0">
               <AnimatePresence>
                 {savedState && (
                   <motion.span
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 10 }}
-                    className="text-xs font-bold text-emerald-700 bg-emerald-100 border border-emerald-300 px-3 py-1.5 rounded-full flex items-center gap-1.5"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    className="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-full flex items-center gap-1.5"
                   >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Änderung gespeichert!</span>
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    Gespeichert
                   </motion.span>
                 )}
               </AnimatePresence>
 
-              {isEditing && (
+              {isEditing ? (
                 <>
-                  <Button
-                    onClick={handleSave}
-                    variant="primary"
-                    size="sm"
-                    className="bg-emerald-600 border-emerald-600 hover:bg-transparent hover:text-emerald-600 text-white font-bold"
-                  >
-                    <Save className="w-3.5 h-3.5 mr-1.5" />
-                    Speichern
-                  </Button>
-
                   <button
                     onClick={handleReset}
-                    className="text-slate-500 hover:text-slate-800 text-xs font-semibold px-2 py-1 flex items-center gap-1"
-                    title="Standard zurücksetzen"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+                    title="Zurücksetzen"
                   >
-                    <RotateCcw className="w-3.5 h-3.5" />
+                    <RotateCcw className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={handleSave}
+                    className="flex items-center gap-1.5 bg-brand-blue text-white text-xs font-semibold px-3 py-1.5 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    <Save className="w-3.5 h-3.5" />
+                    Speichern
                   </button>
                 </>
+              ) : (
+                <button
+                  onClick={() => setIsEditing(true)}
+                  className="flex items-center gap-1.5 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg hover:bg-slate-700 transition-colors"
+                >
+                  <Edit3 className="w-3.5 h-3.5" />
+                  Bearbeiten
+                </button>
               )}
-
-              <Button
-                onClick={handleToggleEdit}
-                variant={isEditing ? "secondary" : "primary"}
-                size="sm"
-                className={
-                  isEditing
-                    ? "bg-amber-500 border-amber-500 hover:bg-transparent hover:text-amber-500 text-slate-950 font-bold"
-                    : "bg-brand-blue border-brand-blue hover:bg-transparent hover:text-brand-blue text-white font-bold"
-                }
-              >
-                {isEditing ? (
-                  <>
-                    <Unlock className="w-3.5 h-3.5 mr-1.5" />
-                    Editiermodus beenden
-                  </>
-                ) : (
-                  <>
-                    <Lock className="w-3.5 h-3.5 mr-1.5" />
-                    Editiermodus starten
-                  </>
-                )}
-              </Button>
             </div>
           </div>
 
-          {/* REAL WEBSITE PREVIEW AREA (Pristine Editorial Architecture Photography) */}
-          <div className="relative min-h-[480px] sm:min-h-[540px] flex flex-col justify-between bg-slate-900 text-white overflow-hidden">
-            {/* Pristine Real Editorial Interior Background Image */}
+          {/* Website Preview */}
+          <div className="relative min-h-[420px] sm:min-h-[500px] flex flex-col justify-between bg-slate-950 text-white overflow-hidden">
+            {/* Background Image */}
             <div
-              className="absolute inset-0 bg-cover bg-center transition-all duration-700 opacity-70"
+              className="absolute inset-0 bg-cover bg-center opacity-50 transition-opacity duration-700"
               style={{ backgroundImage: `url('/images/schreinerei_hero.jpg')` }}
             />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-slate-900/30 pointer-events-none" />
 
-            {/* Dark Vignette Overlay for Crisp Typography Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-950/40 pointer-events-none" />
-
-            {/* Real Website Header Navigation */}
-            <div className="relative z-10 p-6 sm:p-8 flex items-center justify-between border-b border-white/10">
-              <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-xl bg-amber-600 text-white font-bold flex items-center justify-center text-sm shadow-md">
+            {/* Nav */}
+            <div className="relative z-10 px-6 sm:px-10 py-5 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <span className="w-8 h-8 rounded-lg bg-amber-600 text-white font-bold flex items-center justify-center text-xs shadow">
                   OH
                 </span>
-                <span className="font-extrabold text-white text-base sm:text-lg tracking-tight">
-                  Obermeier Holzmanufaktur
-                </span>
+                <span className="font-bold text-white text-sm tracking-tight">Obermeier Holzmanufaktur</span>
               </div>
-              <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-200">
+              <div className="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-300">
                 <span>Leistungen</span>
-                <span>Über uns</span>
                 <span>Projekte</span>
-                <span className="text-amber-400 font-bold">München & Region</span>
+                <span>Kontakt</span>
               </div>
             </div>
 
-            {/* Real Website Hero Section (Directly Editable in Place) */}
-            <div className="relative z-10 p-6 sm:p-12 my-auto max-w-3xl text-left space-y-4">
-              {/* Directly Editable Headline */}
+            {/* Hero Content — editable */}
+            <div className="relative z-10 px-6 sm:px-10 pb-10 max-w-2xl space-y-4">
+              {/* Headline */}
               <div
                 contentEditable={isEditing}
                 suppressContentEditableWarning
                 onBlur={(e) => setHeadline(e.currentTarget.textContent || "")}
-                className={`text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight transition-all rounded-lg p-2 ${
+                className={`text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight transition-all duration-200 rounded-xl px-2 py-1 -mx-2 outline-none ${
                   isEditing
-                    ? "border-2 border-dashed border-brand-blue bg-blue-900/70 outline-none focus:ring-2 focus:ring-brand-blue text-blue-100 cursor-text"
-                    : "border border-transparent"
+                    ? "ring-2 ring-brand-blue ring-offset-2 ring-offset-slate-900 bg-slate-800/60 cursor-text"
+                    : "cursor-default"
                 }`}
               >
                 {headline}
               </div>
 
-              {/* Directly Editable Subline */}
+              {/* Subline */}
               <div
                 contentEditable={isEditing}
                 suppressContentEditableWarning
                 onBlur={(e) => setSubline(e.currentTarget.textContent || "")}
-                className={`text-base sm:text-xl text-slate-200 leading-relaxed font-normal transition-all rounded-lg p-2 ${
+                className={`text-sm sm:text-lg text-slate-300 leading-relaxed transition-all duration-200 rounded-xl px-2 py-1 -mx-2 outline-none ${
                   isEditing
-                    ? "border-2 border-dashed border-brand-blue bg-blue-900/70 outline-none focus:ring-2 focus:ring-brand-blue text-white cursor-text"
-                    : "border border-transparent"
+                    ? "ring-2 ring-brand-blue ring-offset-2 ring-offset-slate-900 bg-slate-800/60 cursor-text"
+                    : "cursor-default"
                 }`}
               >
                 {subline}
               </div>
 
-              {/* Directly Editable CTA Button */}
-              <div className="pt-4 flex flex-wrap items-center gap-4">
+              {/* CTA */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
                 <div
                   contentEditable={isEditing}
                   suppressContentEditableWarning
                   onBlur={(e) => setCta(e.currentTarget.textContent || "")}
-                  className={`inline-flex items-center gap-2 font-bold bg-amber-500 text-slate-950 px-6 py-3.5 rounded-xl shadow-lg transition-all ${
+                  className={`inline-flex items-center gap-2 font-bold bg-amber-500 text-slate-950 px-5 py-3 rounded-xl shadow-md transition-all duration-200 outline-none ${
                     isEditing
-                      ? "border-2 border-dashed border-brand-blue bg-amber-400 outline-none focus:ring-2 focus:ring-brand-blue cursor-text"
-                      : "hover:bg-amber-400 cursor-pointer"
+                      ? "ring-2 ring-brand-blue ring-offset-2 ring-offset-slate-900 cursor-text"
+                      : "cursor-default"
                   }`}
                 >
                   <span>{cta}</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-4 h-4 shrink-0" />
                 </div>
 
-                <div className="text-xs text-slate-300 font-semibold flex items-center gap-1.5">
+                <div className="text-xs text-slate-400 flex items-center gap-1.5">
                   <Phone className="w-3.5 h-3.5 text-amber-400" />
                   <span>+49 89 452 890</span>
                 </div>
               </div>
             </div>
 
-            {/* Real Website Bottom Footer Bar */}
-            <div className="relative z-10 p-4 sm:p-6 border-t border-white/10 bg-slate-950/70 flex items-center justify-between text-xs text-slate-400 font-medium">
-              <span>© Obermeier Holzmanufaktur München · Handwerkskammer München</span>
-              {isEditing ? (
-                <span className="text-amber-400 font-bold flex items-center gap-1">
+            {/* Edit hint overlay — only when editing */}
+            <AnimatePresence>
+              {isEditing && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute top-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-brand-blue text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg"
+                >
                   <Edit3 className="w-3 h-3" />
-                  Tippen Sie direkt in den Text im Bild oben
-                </span>
-              ) : (
-                <span className="text-slate-300">
-                  Echte Live-Vorschau ohne Backend
-                </span>
+                  Klicken Sie auf den Text zum Bearbeiten
+                </motion.div>
               )}
-            </div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Search, Zap, TrendingUp, Star, Award, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { Search, Zap, TrendingUp, Star, Award, CheckCircle2, ArrowUpRight, Gauge, MessageSquarePlus } from "lucide-react";
 
 export const Features: React.FC = () => {
   const containerVariants = {
@@ -43,23 +43,21 @@ export const Features: React.FC = () => {
           viewport={{ once: true, margin: "-80px" }}
           className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left"
         >
-          {/* SÄULE 1: SEO (Google Rank Graphic Card) */}
+          {/* SÄULE 1: SEO (Clean Light Google Rank Graphic) */}
           <motion.div variants={itemVariants}>
             <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col h-full">
               {/* Top Light Blue Graphic Box */}
-              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[175px]">
-                <div className="w-full max-w-[240px] bg-white rounded-2xl p-4 shadow-xl border border-slate-200 font-sans">
-                  <div className="flex items-center justify-between text-[10px] text-slate-400 mb-1">
-                    <span className="truncate">google.de/search?q=schreinerei+muenchen</span>
-                    <span className="text-emerald-700 font-bold flex items-center gap-1">
-                      <Star className="w-2.5 h-2.5 fill-emerald-500 text-emerald-500" /> Platz 1
-                    </span>
+              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[180px]">
+                <div className="w-full max-w-[240px] bg-white rounded-2xl p-5 shadow-lg border border-slate-200 text-center font-sans">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-extrabold text-xs mb-3">
+                    <Star className="w-3.5 h-3.5 fill-emerald-500 text-emerald-500" />
+                    <span>Platz 1 bei Google</span>
                   </div>
-                  <div className="text-sm font-bold text-blue-700 truncate hover:underline cursor-pointer">
-                    Schreinerei Obermeier | Meisterbetrieb München
+                  <div className="text-xl font-black text-brand-navy tracking-tight">
+                    München SEO
                   </div>
-                  <div className="text-xs text-slate-500 mt-1 line-clamp-2">
-                    Ihr Experte für maßgeschneiderte Möbel & Ausbau in München. Direkt anfragen...
+                  <div className="w-full h-2 bg-slate-100 rounded-full mt-3 overflow-hidden">
+                    <div className="h-full bg-brand-blue rounded-full w-full" />
                   </div>
                 </div>
               </div>
@@ -78,21 +76,21 @@ export const Features: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* SÄULE 2: SPEED (Speed Score Graphic Card) */}
+          {/* SÄULE 2: SPEED (Clean Light Speed Graphic - NO BLACK BACKGROUND) */}
           <motion.div variants={itemVariants}>
             <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col h-full">
               {/* Top Light Blue Graphic Box */}
-              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[175px]">
-                <div className="w-full max-w-[240px] bg-slate-950 text-white rounded-2xl p-4 shadow-xl border border-slate-800 font-mono text-xs">
-                  <div className="flex items-center justify-between text-[10px] text-slate-400 mb-2">
-                    <span className="font-bold text-brand-blue">SPEED SCORE</span>
-                    <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold">100 / 100</span>
+              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[180px]">
+                <div className="w-full max-w-[240px] bg-white rounded-2xl p-5 shadow-lg border border-slate-200 text-center font-sans">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-brand-blue font-extrabold text-xs mb-2">
+                    <Gauge className="w-3.5 h-3.5" />
+                    <span>PageSpeed Score 100%</span>
                   </div>
-                  <div className="text-2xl font-black text-white mb-2 tracking-tight">
-                    0.38s <span className="text-xs font-sans text-slate-400 font-normal">Ladezeit</span>
+                  <div className="text-3xl font-black text-emerald-600 tracking-tight my-1">
+                    0,38s
                   </div>
-                  <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-cyan-400 rounded-full w-[99%]" />
+                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                    Ladezeit
                   </div>
                 </div>
               </div>
@@ -111,20 +109,19 @@ export const Features: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* SÄULE 3: CONVERSION (Conversion Lead Card) */}
+          {/* SÄULE 3: CONVERSION (Clean Light Lead Graphic) */}
           <motion.div variants={itemVariants}>
             <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col h-full">
               {/* Top Light Blue Graphic Box */}
-              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[175px]">
-                <div className="w-full max-w-[240px] bg-white rounded-2xl p-4 shadow-xl border border-slate-200 text-left">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-bold text-amber-950">Neue Neukundenanfrage</span>
-                    <span className="text-[10px] font-bold bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full">
-                      +45% Anfragen
-                    </span>
+              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[180px]">
+                <div className="w-full max-w-[240px] bg-white rounded-2xl p-5 shadow-lg border border-slate-200 text-center font-sans">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 font-extrabold text-xs mb-2">
+                    <MessageSquarePlus className="w-3.5 h-3.5 text-amber-600" />
+                    <span>+45% Mehr Anfragen</span>
                   </div>
-                  <div className="text-xs text-amber-900 font-medium truncate">
-                    "Projektangebot für Küchenausbau München..."
+                  <div className="text-lg font-black text-brand-navy tracking-tight mt-2 flex items-center justify-center gap-1">
+                    <span>Neue Kunden</span>
+                    <ArrowUpRight className="w-4 h-4 text-emerald-600" />
                   </div>
                 </div>
               </div>

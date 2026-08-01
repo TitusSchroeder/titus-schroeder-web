@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Mail, MapPin, ArrowUpRight, CheckCircle, Lock } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, CheckCircle, Lock, ShieldCheck, Clock, PhoneCall, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export const Footer: React.FC = () => {
@@ -38,57 +38,86 @@ export const Footer: React.FC = () => {
 
   return (
     <footer id="kontakt" className="bg-brand-navy text-white pt-24 pb-12 relative overflow-hidden">
-      {/* Background Subtle Lines */}
+      {/* Background Subtle Mesh Grid */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
           className="w-full h-full"
           style={{
-            backgroundImage: `radial-gradient(#FFFFFF 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(#FFFFFF 1.2px, transparent 1.2px)`,
             backgroundSize: "32px 32px",
           }}
         />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-          {/* Contact Information */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 items-start">
+          {/* Overhauled Left Contact & Info Column */}
           <div className="lg:col-span-5 space-y-8 text-left">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
-                Lassen Sie uns über Ihr Projekt sprechen.
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-brand-blue font-bold text-xs mb-4">
+                <Sparkles className="w-3.5 h-3.5 text-brand-blue" />
+                <span>100% Unverbindlich & Persönlich</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight mb-4 text-white">
+                Lassen Sie uns über Ihr Vorhaben sprechen.
               </h2>
-              <p className="text-slate-300 text-base leading-relaxed">
-                Ich unterstütze Sie gerne bei Ihrem neuen Webauftritt. Schicken Sie mir eine Nachricht für ein unverbindliches Erstgespräch.
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Egal ob Sie eine neue Website planen oder Ihren bestehenden Auftritt modernisieren möchten: Schreiben Sie mir einfach eine Nachricht.
               </p>
             </div>
 
-            <div className="space-y-4 pt-4 border-t border-slate-800">
+            {/* Structured Contact Cards */}
+            <div className="space-y-4 pt-2">
+              {/* Mail Card */}
               <a
                 href="mailto:titus@schroeder-muc.de"
-                className="flex items-center gap-4 text-slate-300 hover:text-white transition-colors group"
+                className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 hover:border-brand-blue/60 transition-all flex items-center gap-4 group block"
               >
-                <div className="w-10 h-10 rounded-full bg-slate-800 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors shrink-0">
+                <div className="w-11 h-11 rounded-xl bg-brand-blue/20 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-slate-400 block">E-Mail Adresse</span>
-                  <span className="text-base font-semibold">titus@schroeder-muc.de</span>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+                    Direkte E-Mail
+                  </span>
+                  <span className="text-sm sm:text-base font-bold text-white group-hover:text-brand-blue transition-colors">
+                    titus@schroeder-muc.de
+                  </span>
                 </div>
               </a>
 
-              <div className="flex items-start gap-4 text-slate-300">
-                <div className="w-10 h-10 rounded-full bg-slate-800 text-brand-blue flex items-center justify-center shrink-0 mt-0.5">
+              {/* Location & Address Card */}
+              <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-slate-700 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-slate-400 block">Standort</span>
-                  <span className="text-sm font-semibold block text-white">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+                    Standort & Region
+                  </span>
+                  <span className="text-sm font-bold text-white block">
                     Titus Schröder — Webdesign & Entwicklung
                   </span>
-                  <span className="text-xs text-slate-300 block">
-                    München & Region
+                  <span className="text-xs text-slate-300 block mt-0.5">
+                    Peter-Wolfram-Str. 19 · 85540 Haar (München)
                   </span>
                 </div>
+              </div>
+            </div>
+
+            {/* Quick Guarantee Badges */}
+            <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3 text-xs text-slate-300">
+              <div className="flex items-center gap-2.5 font-semibold text-white">
+                <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Rückmeldung innerhalb von 24 Stunden</span>
+              </div>
+              <div className="flex items-center gap-2.5 font-semibold text-white">
+                <ShieldCheck className="w-4 h-4 text-brand-blue shrink-0" />
+                <span>Festpreis-Garantie ohne versteckte Kosten</span>
+              </div>
+              <div className="flex items-center gap-2.5 font-semibold text-white">
+                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Vor-Ort-Termine in München & Region möglich</span>
               </div>
             </div>
           </div>
@@ -226,7 +255,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Legal Footer Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} Titus Schröder — Webdesign & Entwicklung · München & Region.
+            © {new Date().getFullYear()} Titus Schröder — Webdesign & Entwicklung · Peter-Wolfram-Str. 19, 85540 Haar.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/impressum" className="hover:text-white transition-colors">

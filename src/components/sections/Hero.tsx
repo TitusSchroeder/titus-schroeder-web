@@ -1,33 +1,20 @@
 "use client";
 
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
 import content from "@/data/content.json";
 import { Button } from "@/components/ui/Button";
+import { InteractiveDotGrid } from "@/components/ui/InteractiveDotGrid";
 
 export const Hero: React.FC = () => {
-  const { scrollY } = useScroll();
-  const yBg = useTransform(scrollY, [0, 500], [0, 80]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.5]);
-
   return (
     <section className="relative min-h-[85vh] pt-32 pb-20 md:pt-40 md:pb-24 flex flex-col justify-center items-center text-center overflow-hidden bg-white">
-      {/* Subtle Background Mesh Grid */}
-      <motion.div
-        style={{ y: yBg, opacity }}
-        className="absolute inset-0 pointer-events-none z-0"
-      >
-        <div
-          className="w-full h-full opacity-[0.15]"
-          style={{
-            backgroundImage: `radial-gradient(#0A192F 1.2px, transparent 1.2px)`,
-            backgroundSize: "28px 28px",
-          }}
-        />
-        {/* Soft Ambient Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-brand-blue/10 rounded-full blur-3xl pointer-events-none" />
-      </motion.div>
+      {/* Interactive Antigravity Dot Grid (Repulses on Mouse Hover) */}
+      <InteractiveDotGrid />
+
+      {/* Soft Ambient Radial Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-brand-blue/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl">
         {/* Sub-Badge */}
@@ -35,7 +22,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100/80 border border-slate-200 text-brand-navy font-bold text-xs sm:text-sm mb-6 shadow-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100/90 border border-slate-200 text-brand-navy font-bold text-xs sm:text-sm mb-6 shadow-sm"
         >
           <Sparkles className="w-4 h-4 text-brand-blue" />
           <span className="tracking-wide">{content.hero.badge}</span>
@@ -86,7 +73,7 @@ export const Hero: React.FC = () => {
           </a>
         </motion.div>
 
-        {/* Trust Factors Row (Sleek & Clean) */}
+        {/* Trust Factors Row */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
