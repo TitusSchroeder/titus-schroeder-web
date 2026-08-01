@@ -44,45 +44,26 @@ export const CmsDemo: React.FC = () => {
           </p>
         </div>
 
-        {/* Hand-drawn arrow: starts after "bearbeitbar", ends at Bearbeiten button */}
+        {/* Hand-drawn arrow SVG: starts next to "direkt bearbeitbar" and lands at the Bearbeiten button */}
         <AnimatePresence>
           {!isEditing && (
-            <motion.svg
-              key="arrow"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+            <motion.img
+              key="hand-drawn-arrow"
+              src="/images/arrow.svg"
+              alt=""
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ delay: 0.3, duration: 0.4 }}
-              className="absolute hidden lg:block pointer-events-none z-30 overflow-visible"
-              style={{ top: '52px', left: 0, width: '100%', height: '120px' }}
-              viewBox="0 0 960 120"
-              preserveAspectRatio="xMidYMid meet"
-              fill="none"
-            >
-              {/* Arrow body: curves from right of heading text down to the Bearbeiten button */}
-              <motion.path
-                d="M 620,22 C 680,16 820,38 918,98"
-                stroke="#1D4ED8"
-                strokeWidth="5.5"
-                strokeLinecap="round"
-                fill="none"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.7, ease: 'easeOut' }}
-              />
-              {/* Fork arrowhead — hand-drawn style */}
-              <motion.path
-                d="M 898,84 L 920,100 L 904,116"
-                stroke="#1D4ED8"
-                strokeWidth="5.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={{ delay: 1.1, duration: 0.3, ease: 'easeOut' }}
-              />
-            </motion.svg>
+              transition={{ delay: 0.2, duration: 0.4 }}
+              className="absolute hidden lg:block pointer-events-none z-30 select-none"
+              style={{
+                top: "6px",
+                right: "12px",
+                width: "230px",
+                height: "140px",
+                objectFit: "contain",
+              }}
+            />
           )}
         </AnimatePresence>
 
