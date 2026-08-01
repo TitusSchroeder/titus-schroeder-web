@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Sparkles, ShieldCheck, Zap, Star } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Star, ShieldCheck } from "lucide-react";
 import content from "@/data/content.json";
 import { Button } from "@/components/ui/Button";
 
@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-brand-blue/10 rounded-full blur-3xl pointer-events-none" />
       </motion.div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
         {/* Sub-Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,46 +86,95 @@ export const Hero: React.FC = () => {
           </a>
         </motion.div>
 
-        {/* FRIENDLY, ELEGANT LIGHT SHOWCASE CARDS (With spacious mt-20 margin) */}
+        {/* GRAPHIC FEATURE CARDS BELOW HERO (Matching Screenshot Design) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-20 sm:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 text-left"
+          className="mt-20 sm:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-left"
         >
-          <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 transition-all flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center shrink-0 font-bold">
-              <Zap className="w-5 h-5" />
+          {/* Card 1: Custom Code Speed */}
+          <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col">
+            {/* Top Light Blue Graphic Box */}
+            <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[170px]">
+              <div className="w-full max-w-[240px] bg-slate-950 text-white rounded-2xl p-4 shadow-xl border border-slate-800 font-mono text-xs">
+                <div className="flex items-center justify-between text-[10px] text-slate-400 mb-2">
+                  <span className="font-bold text-brand-blue">NEXT.JS 14</span>
+                  <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold">100 / 100</span>
+                </div>
+                <div className="text-2xl font-black text-white mb-2 tracking-tight">
+                  0.35s <span className="text-xs font-sans text-slate-400 font-normal">Load Time</span>
+                </div>
+                <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-cyan-400 rounded-full w-[98%]" />
+                </div>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-brand-navy text-base">Ladezeit unter 0,5s</h4>
-              <p className="text-slate-600 text-xs mt-1 leading-relaxed">
-                Statischer HTML-Code ohne träge Datenbanken.
-              </p>
+            {/* Card Content */}
+            <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+              <div>
+                <h4 className="text-lg font-extrabold text-brand-navy mb-2">Custom Code Speed</h4>
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Programmiert mit Next.js & TypeScript. Keine trägen WordPress-Plugins – lädt extrem schnell in Bruchteilen einer Sekunde.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 transition-all flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold">
-              <ShieldCheck className="w-5 h-5" />
+          {/* Card 2: Lokales SEO München */}
+          <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col">
+            {/* Top Light Blue Graphic Box */}
+            <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[170px]">
+              <div className="w-full max-w-[240px] bg-white rounded-2xl p-4 shadow-xl border border-slate-200 text-left font-sans">
+                <div className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-600 mb-1">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>#1 Google Rank München</span>
+                </div>
+                <div className="text-sm font-bold text-blue-700 truncate">titus-schroeder.de</div>
+                <div className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-tight">
+                  Webdesign & Entwicklung München. SEO-optimiert...
+                </div>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-brand-navy text-base">100% Ausfallsicher</h4>
-              <p className="text-slate-600 text-xs mt-1 leading-relaxed">
-                Keine Sicherheitslücken, Hacking-Risiken oder Updates.
-              </p>
+            {/* Card Content */}
+            <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+              <div>
+                <h4 className="text-lg font-extrabold text-brand-navy mb-2">Lokales SEO München</h4>
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Damit Ihre Zielgruppe Sie auf Google findet. Sauber strukturierter Code, Meta-Tags & Schema.org Auszeichnung inklusive.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 transition-all flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold">
-              <Star className="w-5 h-5" />
+          {/* Card 3: 100% Ausfallsicher & Wartungsfrei */}
+          <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col">
+            {/* Top Light Blue Graphic Box */}
+            <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[170px]">
+              <div className="w-full max-w-[240px] bg-white rounded-2xl p-4 shadow-xl border border-slate-200 text-left">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase">Sicherheit & Status</span>
+                  <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    100% Online
+                  </span>
+                </div>
+                <div className="text-xs font-bold text-brand-navy flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                  <span>0% Angriffsfläche</span>
+                </div>
+                <div className="text-[11px] text-slate-500 mt-1">
+                  Keine Datenbank, keine Hacking-Risiken.
+                </div>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-brand-navy text-base">Münchner Betriebe</h4>
-              <p className="text-slate-600 text-xs mt-1 leading-relaxed">
-                Direkter Ansprechpartner ohne Agentur-Wasserkopf.
-              </p>
+            {/* Card Content */}
+            <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+              <div>
+                <h4 className="text-lg font-extrabold text-brand-navy mb-2">Ausfallsicher & Wartungsfrei</h4>
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Bei unserer schlanken Architektur gibt es keine angreifbaren Datenbanken im Hintergrund. Ihre Seite läuft extrem stabil.
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>

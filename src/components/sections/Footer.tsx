@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Mail, MapPin, Send, CheckCircle, Lock } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, CheckCircle, Lock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export const Footer: React.FC = () => {
@@ -206,7 +206,7 @@ export const Footer: React.FC = () => {
                     ) : (
                       <>
                         <span>Unverbindlich anfragen</span>
-                        <Send className="w-4 h-4" />
+                        <ArrowUpRight className="w-4 h-4" />
                       </>
                     )}
                   </Button>

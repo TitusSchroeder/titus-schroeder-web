@@ -2,8 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Search, Zap, TrendingUp, Star, Award, CheckCircle2 } from "lucide-react";
-import { Card } from "@/components/ui/Card";
+import { Search, Zap, TrendingUp, Star, Award, CheckCircle2, ShieldCheck, ArrowUpRight } from "lucide-react";
 
 export const Features: React.FC = () => {
   const containerVariants = {
@@ -39,121 +38,106 @@ export const Features: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left"
         >
-          {/* SÄULE 1: SEO */}
+          {/* SÄULE 1: SEO (Google Rank Graphic Card) */}
           <motion.div variants={itemVariants}>
-            <Card className="h-full flex flex-col justify-between p-8 bg-white border border-slate-200 hover:border-brand-blue/40 hover:shadow-lg transition-all">
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-brand-blue flex items-center justify-center border border-blue-100 font-bold">
-                    <Search className="w-6 h-6" />
+            <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col h-full">
+              {/* Top Light Blue Graphic Box */}
+              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[170px]">
+                <div className="w-full max-w-[240px] bg-white rounded-2xl p-4 shadow-xl border border-slate-200 font-sans">
+                  <div className="flex items-center justify-between text-[10px] text-slate-400 mb-1">
+                    <span className="truncate">google.de/search?q=schreinerei+muenchen</span>
+                    <span className="text-emerald-700 font-bold flex items-center gap-1">
+                      <Star className="w-2.5 h-2.5 fill-emerald-500 text-emerald-500" /> Platz 1
+                    </span>
                   </div>
-                  <span className="text-xs font-bold text-brand-blue bg-blue-50 px-3 py-1 rounded-full">
+                  <div className="text-sm font-bold text-blue-700 truncate hover:underline cursor-pointer">
+                    Schreinerei Obermeier | Meisterbetrieb München
+                  </div>
+                  <div className="text-xs text-slate-500 mt-1 line-clamp-2">
+                    Ihr Experte für maßgeschneiderte Möbel & Ausbau in München. Direkt anfragen...
+                  </div>
+                </div>
+              </div>
+              {/* Card Content */}
+              <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+                <div>
+                  <span className="text-xs font-bold text-brand-blue bg-blue-50 px-3 py-1 rounded-full inline-block mb-3">
                     Säule 01
                   </span>
-                </div>
-
-                <h3 className="text-2xl font-bold text-brand-navy mb-3">
-                  Gefunden werden (SEO)
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                  Schlanker Code und saubere Semantik für Top-Rankings bei lokalen Suchanfragen in München und Umgebung.
-                </p>
-              </div>
-
-              {/* Visuelles Widget: Google Search Result Mockup */}
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 mt-4 text-left font-sans">
-                <div className="flex items-center justify-between text-[10px] text-slate-400 mb-1">
-                  <span className="truncate">google.de/search?q=schreinerei+muenchen</span>
-                  <span className="text-emerald-700 font-bold flex items-center gap-1">
-                    <Star className="w-2.5 h-2.5 fill-emerald-500 text-emerald-500" /> Platz 1
-                  </span>
-                </div>
-                <div className="text-sm font-bold text-blue-700 truncate hover:underline cursor-pointer">
-                  Schreinerei Obermeier | Meisterbetrieb München
-                </div>
-                <div className="text-xs text-slate-500 mt-1 line-clamp-2">
-                  Ihr Experte für maßgeschneiderte Möbel & Ausbau in München. Direkt anfragen...
+                  <h3 className="text-xl font-extrabold text-brand-navy mb-2">Gefunden werden (SEO)</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    Schlanker Code und saubere Semantik für Top-Rankings bei lokalen Suchanfragen in München und Umgebung.
+                  </p>
                 </div>
               </div>
-            </Card>
+            </div>
           </motion.div>
 
-          {/* SÄULE 2: SPEED (Minimale Ladezeit & Performance) */}
+          {/* SÄULE 2: SPEED (Speed Score Graphic Card) */}
           <motion.div variants={itemVariants}>
-            <Card className="h-full flex flex-col justify-between p-8 bg-white border border-slate-200 hover:border-brand-blue/40 hover:shadow-lg transition-all">
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100 font-bold">
-                    <Zap className="w-6 h-6" />
+            <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col h-full">
+              {/* Top Light Blue Graphic Box */}
+              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[170px]">
+                <div className="w-full max-w-[240px] bg-slate-950 text-white rounded-2xl p-4 shadow-xl border border-slate-800 font-mono text-xs">
+                  <div className="flex items-center justify-between text-[10px] text-slate-400 mb-2">
+                    <span className="font-bold text-brand-blue">SPEED SCORE</span>
+                    <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold">100 / 100</span>
                   </div>
-                  <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+                  <div className="text-2xl font-black text-white mb-2 tracking-tight">
+                    0.38s <span className="text-xs font-sans text-slate-400 font-normal">Ladezeit</span>
+                  </div>
+                  <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-full bg-cyan-400 rounded-full w-[99%]" />
+                  </div>
+                </div>
+              </div>
+              {/* Card Content */}
+              <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+                <div>
+                  <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full inline-block mb-3">
                     Säule 02
                   </span>
-                </div>
-
-                <h3 className="text-2xl font-bold text-brand-navy mb-3">
-                  Minimale Ladezeit & Speed
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                  Ladezeiten unter 0,5 Sekunden. Keine trägen Baukästen oder überladenen Datenbanken im Hintergrund.
-                </p>
-              </div>
-
-              {/* Visuelles Widget: Modern Light PageSpeed Score */}
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 mt-4 flex items-center justify-between">
-                <div>
-                  <div className="text-xs text-slate-500 font-medium">Google PageSpeed Rating</div>
-                  <div className="text-xl font-extrabold text-emerald-600 flex items-center gap-1.5 mt-0.5">
-                    <span>99 / 100</span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs text-slate-500 font-medium">Ladezeit</div>
-                  <div className="text-sm font-bold text-brand-navy bg-white border border-slate-200 px-3 py-1 rounded-lg mt-0.5 inline-flex items-center gap-1 shadow-sm">
-                    <Zap className="w-3.5 h-3.5 text-amber-500 fill-amber-500" /> 0.38 s
-                  </div>
+                  <h3 className="text-xl font-extrabold text-brand-navy mb-2">Minimale Ladezeit & Speed</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    Ladezeiten unter 0,5 Sekunden. Keine trägen Baukästen oder überladenen Datenbanken im Hintergrund.
+                  </p>
                 </div>
               </div>
-            </Card>
+            </div>
           </motion.div>
 
-          {/* SÄULE 3: CONVERSION */}
+          {/* SÄULE 3: CONVERSION (Conversion Lead Card) */}
           <motion.div variants={itemVariants}>
-            <Card className="h-full flex flex-col justify-between p-8 bg-white border border-slate-200 hover:border-brand-blue/40 hover:shadow-lg transition-all">
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100 font-bold">
-                    <TrendingUp className="w-6 h-6" />
+            <div className="rounded-3xl bg-white border border-slate-200/80 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col h-full">
+              {/* Top Light Blue Graphic Box */}
+              <div className="bg-sky-50/80 p-6 flex items-center justify-center border-b border-sky-100/80 min-h-[170px]">
+                <div className="w-full max-w-[240px] bg-white rounded-2xl p-4 shadow-xl border border-slate-200 text-left">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs font-bold text-amber-950">Neue Neukundenanfrage</span>
+                    <span className="text-[10px] font-bold bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full">
+                      +45% Anfragen
+                    </span>
                   </div>
-                  <span className="text-xs font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full">
+                  <div className="text-xs text-amber-900 font-medium truncate">
+                    "Projektangebot für Küchenausbau München..."
+                  </div>
+                </div>
+              </div>
+              {/* Card Content */}
+              <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+                <div>
+                  <span className="text-xs font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full inline-block mb-3">
                     Säule 03
                   </span>
-                </div>
-
-                <h3 className="text-2xl font-bold text-brand-navy mb-3">
-                  Kunden überzeugen (Conversion)
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                  Ein modernes Design, das Vertrauen schafft und Ihre Münchner Neukunden ohne Umwege zur Anfrage führt.
-                </p>
-              </div>
-
-              {/* Visuelles Widget: Lead Request Card */}
-              <div className="bg-amber-50/80 border border-amber-200/80 rounded-2xl p-4 mt-4 text-left">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-bold text-amber-950">Neue Neukundenanfrage</span>
-                  <span className="text-[10px] font-bold bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full">
-                    +45% Anfragen
-                  </span>
-                </div>
-                <div className="text-xs text-amber-900 font-medium truncate">
-                  "Projektangebot für Küchenausbau München..."
+                  <h3 className="text-xl font-extrabold text-brand-navy mb-2">Kunden überzeugen (Conversion)</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    Ein modernes Design, das Vertrauen schafft und Ihre Münchner Neukunden ohne Umwege zur Anfrage führt.
+                  </p>
                 </div>
               </div>
-            </Card>
+            </div>
           </motion.div>
         </motion.div>
       </div>
