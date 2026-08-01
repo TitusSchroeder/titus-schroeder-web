@@ -30,8 +30,8 @@ export const CmsDemo: React.FC = () => {
   };
 
   return (
-    <section id="cms-demo" className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+    <section id="cms-demo" className="py-24 bg-white relative overflow-visible">
+      <div className="container mx-auto px-4 sm:px-6 max-w-5xl relative overflow-visible">
 
         {/* Section Header — minimal */}
         <div className="text-center mb-12">
@@ -43,6 +43,48 @@ export const CmsDemo: React.FC = () => {
             <span className="font-semibold text-slate-700">Bearbeiten</span> und tippen Sie einfach los.
           </p>
         </div>
+
+        {/* Hand-drawn arrow: starts after "bearbeitbar", ends at Bearbeiten button */}
+        <AnimatePresence>
+          {!isEditing && (
+            <motion.svg
+              key="arrow"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.3, duration: 0.4 }}
+              className="absolute hidden lg:block pointer-events-none z-30 overflow-visible"
+              style={{ top: '52px', left: 0, width: '100%', height: '120px' }}
+              viewBox="0 0 960 120"
+              preserveAspectRatio="xMidYMid meet"
+              fill="none"
+            >
+              {/* Arrow body: curves from right of heading text down to the Bearbeiten button */}
+              <motion.path
+                d="M 620,22 C 680,16 820,38 918,98"
+                stroke="#1D4ED8"
+                strokeWidth="5.5"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.7, ease: 'easeOut' }}
+              />
+              {/* Fork arrowhead — hand-drawn style */}
+              <motion.path
+                d="M 898,84 L 920,100 L 904,116"
+                stroke="#1D4ED8"
+                strokeWidth="5.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 1 }}
+                transition={{ delay: 1.1, duration: 0.3, ease: 'easeOut' }}
+              />
+            </motion.svg>
+          )}
+        </AnimatePresence>
 
         {/* Browser Window */}
         <div className="rounded-2xl shadow-2xl border border-slate-200 overflow-hidden bg-white">
@@ -60,46 +102,6 @@ export const CmsDemo: React.FC = () => {
                 https://obermeier-holzmanufaktur.de
               </span>
             </div>
-
-            {/* Hand-drawn arrow pointing to Bearbeiten button — only visible when not editing */}
-            {!isEditing && (
-              <motion.div
-                initial={{ opacity: 0, y: -6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="absolute right-[108px] -top-10 hidden sm:block pointer-events-none z-20"
-              >
-                <svg
-                  width="72"
-                  height="52"
-                  viewBox="0 0 72 52"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="text-brand-blue"
-                >
-                  {/* Hand-drawn curved arrow body */}
-                  <path
-                    d="M 8,6 C 10,6 20,4 32,10 C 46,17 58,30 62,44"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                    style={{ strokeDasharray: 140, strokeDashoffset: 0 }}
-                  />
-                  {/* Arrowhead fork — hand-drawn style */}
-                  <path
-                    d="M 52,42 L 62,46 L 58,34"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                  />
-                </svg>
-              </motion.div>
-            )}
 
             {/* Controls */}
             <div className="flex items-center gap-2 ml-auto shrink-0">
