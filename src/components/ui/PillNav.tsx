@@ -11,12 +11,11 @@ export const PillNav: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 30);
     };
+
+    // Immediately check scroll position on mount/reload
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -37,11 +36,11 @@ export const PillNav: React.FC = () => {
           maxWidth: scrolled ? "52rem" : "68rem",
           y: scrolled ? -2 : 0,
         }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className={`w-full pointer-events-auto flex items-center justify-between transition-colors duration-400 p-2 ${
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        className={`w-full pointer-events-auto flex items-center justify-between transition-all duration-300 p-2 ${
           scrolled
-            ? "bg-white/80 backdrop-blur-2xl rounded-full border border-slate-200/90 shadow-pill"
-            : "bg-transparent rounded-2xl"
+            ? "bg-white/60 backdrop-blur-2xl rounded-full border border-slate-200/80 shadow-pill"
+            : "bg-white/30 backdrop-blur-md rounded-2xl border border-transparent"
         }`}
       >
         {/* Logo Left */}
@@ -68,7 +67,7 @@ export const PillNav: React.FC = () => {
           ))}
         </div>
 
-        {/* Right CTA Button (Uses universal hover rule) */}
+        {/* Right CTA Button (Universal Hover Rule) */}
         <div className="flex items-center gap-2 shrink-0">
           <a
             href="#kontakt"
@@ -94,7 +93,7 @@ export const PillNav: React.FC = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="absolute top-16 left-4 right-4 bg-white/95 backdrop-blur-2xl border border-brand-border rounded-3xl p-6 shadow-2xl md:hidden pointer-events-auto flex flex-col gap-4 text-center"
+          className="absolute top-16 left-4 right-4 bg-white/90 backdrop-blur-2xl border border-brand-border rounded-3xl p-6 shadow-2xl md:hidden pointer-events-auto flex flex-col gap-4 text-center"
         >
           {navLinks.map((link) => (
             <a
