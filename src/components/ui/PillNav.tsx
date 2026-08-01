@@ -71,7 +71,7 @@ export const PillNav: React.FC = () => {
         <div className="flex items-center gap-2 shrink-0">
           <a
             href="#kontakt"
-            className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold bg-brand-blue text-white border border-brand-blue h-9 px-4 rounded-full hover:bg-transparent hover:text-brand-blue transition-all shadow-sm"
+            className="hidden md:inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold bg-brand-blue text-white border border-brand-blue h-9 px-4 rounded-full hover:bg-transparent hover:text-brand-blue transition-all shadow-sm"
           >
             <span>Projekt anfragen</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -105,13 +105,7 @@ export const PillNav: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <a
-            href="#kontakt"
-            onClick={() => setMobileMenuOpen(false)}
-            className="mt-2 text-center text-sm font-bold bg-brand-blue text-white py-3 rounded-full hover:bg-transparent hover:text-brand-blue border border-brand-blue transition-all shadow-sm"
-          >
-            Projekt anfragen
-          </a>
+
         </motion.div>
       )}
     </header>
