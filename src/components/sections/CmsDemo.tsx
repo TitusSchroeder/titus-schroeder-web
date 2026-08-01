@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Edit3, Save, Lock, Unlock, Sparkles, CheckCircle2, RotateCcw, Phone, ArrowUpRight, Zap } from "lucide-react";
+import { Edit3, Save, Lock, Unlock, Sparkles, CheckCircle2, RotateCcw, Phone, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export const CmsDemo: React.FC = () => {
@@ -38,9 +38,9 @@ export const CmsDemo: React.FC = () => {
   };
 
   return (
-    <section id="cms-demo" className="py-20 bg-slate-800 text-white relative overflow-hidden">
+    <section id="cms-demo" className="py-20 bg-slate-900 text-white relative overflow-hidden">
       {/* Subtle Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-3 sm:px-6 max-w-6xl relative z-10">
         {/* Section Header */}
@@ -52,7 +52,7 @@ export const CmsDemo: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
             Probieren Sie es selbst aus
           </h2>
-          <p className="text-slate-200 text-sm sm:text-base">
+          <p className="text-slate-300 text-sm sm:text-base">
             Klicken Sie oben rechts im Fenster auf <strong>"Editiermodus starten"</strong> und tippen Sie Ihre Änderungen direkt in die Vorschau-Website ein.
           </p>
         </div>
@@ -163,16 +163,16 @@ export const CmsDemo: React.FC = () => {
             </div>
           </div>
 
-          {/* REAL WEBSITE PREVIEW AREA (Carpentry Munich) */}
-          <div className="relative min-h-[480px] sm:min-h-[540px] flex flex-col justify-between bg-slate-800 text-white overflow-hidden">
-            {/* KI-Generated Hero Background Image */}
+          {/* REAL WEBSITE PREVIEW AREA (Pristine Editorial Architecture Photography) */}
+          <div className="relative min-h-[480px] sm:min-h-[540px] flex flex-col justify-between bg-slate-900 text-white overflow-hidden">
+            {/* Pristine Real Editorial Interior Background Image */}
             <div
-              className="absolute inset-0 bg-cover bg-center transition-all duration-700 opacity-60"
+              className="absolute inset-0 bg-cover bg-center transition-all duration-700 opacity-70"
               style={{ backgroundImage: `url('/images/schreinerei_hero.jpg')` }}
             />
 
-            {/* Dark Overlay for High Contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-800/70 to-slate-900/50 pointer-events-none" />
+            {/* Dark Vignette Overlay for Crisp Typography Readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-950/40 pointer-events-none" />
 
             {/* Real Website Header Navigation */}
             <div className="relative z-10 p-6 sm:p-8 flex items-center justify-between border-b border-white/10">
@@ -194,10 +194,6 @@ export const CmsDemo: React.FC = () => {
 
             {/* Real Website Hero Section (Directly Editable in Place) */}
             <div className="relative z-10 p-6 sm:p-12 my-auto max-w-3xl text-left space-y-4">
-              <div className="inline-block bg-amber-500/90 text-slate-950 font-extrabold text-xs uppercase tracking-wider px-3.5 py-1 rounded-md shadow-sm">
-                Schreinerei Meisterbetrieb · München & Region
-              </div>
-
               {/* Directly Editable Headline */}
               <div
                 contentEditable={isEditing}
@@ -205,7 +201,7 @@ export const CmsDemo: React.FC = () => {
                 onBlur={(e) => setHeadline(e.currentTarget.textContent || "")}
                 className={`text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight transition-all rounded-lg p-2 ${
                   isEditing
-                    ? "border-2 border-dashed border-brand-blue bg-blue-900/60 outline-none focus:ring-2 focus:ring-brand-blue text-blue-100 cursor-text"
+                    ? "border-2 border-dashed border-brand-blue bg-blue-900/70 outline-none focus:ring-2 focus:ring-brand-blue text-blue-100 cursor-text"
                     : "border border-transparent"
                 }`}
               >
@@ -219,7 +215,7 @@ export const CmsDemo: React.FC = () => {
                 onBlur={(e) => setSubline(e.currentTarget.textContent || "")}
                 className={`text-base sm:text-xl text-slate-200 leading-relaxed font-normal transition-all rounded-lg p-2 ${
                   isEditing
-                    ? "border-2 border-dashed border-brand-blue bg-blue-900/60 outline-none focus:ring-2 focus:ring-brand-blue text-white cursor-text"
+                    ? "border-2 border-dashed border-brand-blue bg-blue-900/70 outline-none focus:ring-2 focus:ring-brand-blue text-white cursor-text"
                     : "border border-transparent"
                 }`}
               >
@@ -250,7 +246,7 @@ export const CmsDemo: React.FC = () => {
             </div>
 
             {/* Real Website Bottom Footer Bar */}
-            <div className="relative z-10 p-4 sm:p-6 border-t border-white/10 bg-slate-900/80 flex items-center justify-between text-xs text-slate-400 font-medium">
+            <div className="relative z-10 p-4 sm:p-6 border-t border-white/10 bg-slate-950/70 flex items-center justify-between text-xs text-slate-400 font-medium">
               <span>© Obermeier Holzmanufaktur München · Handwerkskammer München</span>
               {isEditing ? (
                 <span className="text-amber-400 font-bold flex items-center gap-1">
