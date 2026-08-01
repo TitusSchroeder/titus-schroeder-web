@@ -1,0 +1,115 @@
+{
+  "hero": {
+    "badge": "Titus Schröder — Digital Studio · München",
+    "h1": "Schnelle, moderne Websites, die in München gefunden werden – und Kunden überzeugen.",
+    "subline": "Ich entwickle maßgeschneiderte Webauftritte für lokale Unternehmen. Ohne träge Systeme oder Backend-Chaos – dafür mit maximaler Ladezeit, messbarer Google-Sichtbarkeit und intuitiver Direkt-Bearbeitung.",
+    "ctaPrimary": "Projekt anfragen",
+    "ctaSecondary": "Seite jetzt selbst bearbeiten ↓"
+  },
+  "features": [
+    {
+      "id": "seo",
+      "icon": "Search",
+      "title": "Gefunden werden (SEO)",
+      "description": "Schlanker Code und saubere Semantik für Top-Rankings bei lokalen Suchanfragen in München."
+    },
+    {
+      "id": "speed",
+      "icon": "Zap",
+      "title": "Höchste Ladezeit & Performance",
+      "description": "Ladezeiten unter 0,5 Sekunden. Keine trägen Baukästen oder überladenen Datenbanken."
+    },
+    {
+      "id": "conversion",
+      "icon": "TrendingUp",
+      "title": "Kunden überzeugen (Conversion)",
+      "description": "Ein modernes Design, das Vertrauen schafft und Besucher ohne Umwege zur Anfrage führt."
+    }
+  ],
+  "cmsDemo": {
+    "title": "Probieren Sie es selbst aus",
+    "subtitle": "Klicken Sie auf den Button oben rechts im Fenster, um den Editiermodus freizuschalten. Bearbeiten Sie den Text direkt in der Vorschau.",
+    "buttonStart": "Editiermodus starten",
+    "buttonStop": "Editiermodus beenden",
+    "sampleHeadline": "Obermeier Holzmanufaktur — Meisterbetrieb München",
+    "sampleDescription": "Seit 1998 fertigen wir maßgeschneiderte Massivholzmöbel und hochwertige Innenausbauten mit meisterlicher Präzision."
+  },
+  "pricing": [
+    {
+      "name": "Starter",
+      "subtitle": "Kompakter One-Pager für eine schnelle, klare Präsenz.",
+      "price": "ab 790 €",
+      "highlight": false,
+      "badge": null,
+      "features": [
+        "Vollständiger One-Pager",
+        "Direkt-Bearbeitung inklusive",
+        "Extrem schnelle Ladezeit (Mobile-First)",
+        "Basis SEO-Setup (München)",
+        "DSGVO-Konformität (Datenschutz & Impressum)",
+        "Kontakt-Formular"
+      ],
+      "buttonText": "Starter anfragen"
+    },
+    {
+      "name": "Business",
+      "subtitle": "Mehrseitige Website für gewachsene Unternehmen.",
+      "price": "ab 1.490 €",
+      "highlight": true,
+      "badge": "★ Beliebteste Wahl",
+      "features": [
+        "Bis zu 10 Unterseiten",
+        "Direkt-Bearbeitung inklusive",
+        "Zweisprachigkeit (DE / EN)",
+        "Erweitertes Lokales SEO-Set (München)",
+        "Kontakt- & Anfrage-Formulare",
+        "DSGVO-Konformität",
+        "Premium Performance & Animationen"
+      ],
+      "buttonText": "Business wählen"
+    },
+    {
+      "name": "Enterprise",
+      "subtitle": "Maßgeschneiderte Großprojekte & Sonderwünsche.",
+      "price": "Auf Anfrage",
+      "highlight": false,
+      "badge": null,
+      "features": [
+        "Beliebige Seitenzahl",
+        "Direkt-Bearbeitung inklusive",
+        "Mehrsprachigkeit & Spezialfunktionen",
+        "Anbindungen an CRM / Drittsysteme",
+        "Individuelles Design & Animationen",
+        "Prioritäts-Support"
+      ],
+      "buttonText": "Projekt anfragen"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Wie lange dauert die Erstellung meiner neuen Website?",
+      "answer": "In der Regel steht Ihre fertige Website innerhalb von 1 bis 2 Wochen. Den ersten vollständigen Entwurf erhalten Sie bereits in der ersten Woche. Danach verfeinern wir gemeinsam die Details."
+    },
+    {
+      "question": "Kann ich auch später noch größere Änderungen vornehmen lassen?",
+      "answer": "Ja. Für einfache Text- und Bildanpassungen nutzen Sie jederzeit Ihre direkte Live-Bearbeitung. Für größere Funktionserweiterungen buchen Sie Änderungen flexibel zum Einmalpreis oder nutzen unser monatliches Service-Abo."
+    },
+    {
+      "question": "Ist die Website wirklich so extrem schnell?",
+      "answer": "Ja. Da wir auf träge Baukästen, riesige Datenbanken und überladene Plugin-Systeme verzichten, lädt Ihre Website in Bruchteilen einer Sekunde – ein entscheidender Google-Vorteil in München."
+    },
+    {
+      "question": "Wie sicher ist das System gegen Hacks und Ausfälle?",
+      "answer": "Maximal sicher. Bei unserer schlanken Architektur gibt es keine angreifbaren Datenbanken im Hintergrund und keine anfälligen Plugins. Ihre Seite läuft extrem stabil und wartungsfrei."
+    },
+    {
+      "question": "Kann ich wirklich so viel selbst anpassen, ohne etwas kaputt zu machen?",
+      "answer": "Genau dafür ist das System gebaut. Sie tippen Ihre Änderungen direkt auf der Website ein und klicken auf 'Speichern'. Kein Backend, keine Vorkenntnisse nötig."
+    }
+  ],
+  "about": {
+    "badge": "Persönlich & Lokal in München",
+    "h2": "Moderne Web-Architektur aus der Region München. Direkt. Durchdacht. Ohne Agentur-Wasserkopf.",
+    "text": "Bei mir sprechen Sie nicht mit Vertrieblern oder wechselnden Projektleitern, sondern direkt mit dem Entwickler Ihres digitalen Auftritts. Ich verfolge einen klaren Ansatz: Webseiten für Münchner Unternehmen müssen nicht kompliziert sein, sondern Ergebnisse liefern. Sie müssen bei Google oben stehen, blitzschnell laden und Neukunden überzeugen. Kein technisches Kauderwelsch, keine versteckten Kosten – sondern eine saubere, moderne Website, die Ihren Betrieb perfekt repräsentiert."
+  }
+}
