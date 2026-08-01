@@ -38,35 +38,35 @@ export const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Personal Munich Commitment Card */}
+          {/* Friendly Light Munich Commitment Card */}
           <div className="lg:col-span-5">
             <motion.div
               whileHover={{ y: -4 }}
-              className="p-8 rounded-3xl bg-brand-navy text-white shadow-2xl relative border border-slate-800 text-left"
+              className="p-8 rounded-3xl bg-white text-brand-navy shadow-xl relative border-2 border-brand-blue/20 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-brand-blue text-white flex items-center justify-center text-xl font-black shrink-0 shadow-md">
                   TS
                 </div>
                 <div>
-                  <h3 className="text-xl font-extrabold text-white">Titus Schröder</h3>
+                  <h3 className="text-xl font-extrabold text-brand-navy">Titus Schröder</h3>
                   <p className="text-brand-blue font-bold text-xs mt-0.5">Webdesign & Entwicklung</p>
                 </div>
               </div>
 
-              <div className="space-y-4 text-xs text-slate-300 border-t border-slate-800 pt-6 mb-6">
+              <div className="space-y-4 text-xs text-slate-700 border-t border-slate-100 pt-6 mb-6">
                 <div className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <Clock className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-bold">1 bis 2 Wochen Lieferzeit</strong>
+                    <strong className="text-brand-navy block font-bold">1 bis 2 Wochen Lieferzeit</strong>
                     Vom ersten Gespräch bis zur fertigen Online-Website.
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-bold">Persönlich in München & Region</strong>
+                    <strong className="text-brand-navy block font-bold">Persönlich in München & Region</strong>
                     Beratung & Abstimmung auf Wunsch direkt vor Ort bei Ihrem Betrieb.
                   </div>
                 </div>
@@ -74,15 +74,15 @@ export const About: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <PhoneCall className="w-4 h-4 text-brand-blue shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-bold">Direkter Draht</strong>
+                    <strong className="text-brand-navy block font-bold">Direkter Draht</strong>
                     Sie sprechen jederzeit direkt mit mir – ohne Projektleiter-Umwege.
                   </div>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 text-[11px] font-semibold text-slate-400 flex items-center justify-between">
+              <div className="pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-500 flex items-center justify-between">
                 <span>München & Region</span>
-                <span className="text-emerald-400 font-bold">Festpreis-Garantie</span>
+                <span className="text-emerald-600 font-bold">Festpreis-Garantie</span>
               </div>
             </motion.div>
           </div>
