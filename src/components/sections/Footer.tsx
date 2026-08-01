@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, Lock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export const Footer: React.FC = () => {
@@ -81,12 +81,12 @@ export const Footer: React.FC = () => {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-slate-400 block">Standort / Anschrift</span>
+                  <span className="text-xs text-slate-400 block">Standort</span>
                   <span className="text-sm font-semibold block text-white">
                     Titus Schröder — Webdesign & Entwicklung
                   </span>
                   <span className="text-xs text-slate-300 block">
-                    Peter-Wolfram-Str. 19 · 85540 Haar (München)
+                    München & Region
                   </span>
                 </div>
               </div>
@@ -210,6 +210,13 @@ export const Footer: React.FC = () => {
                       </>
                     )}
                   </Button>
+
+                  <div className="flex items-center gap-1.5 text-[11px] text-slate-500 pt-2">
+                    <Lock className="w-3 h-3 text-slate-400 shrink-0" />
+                    <span>
+                      Verschlüsselte Übertragung via StaticForms. Registrierung & Datenverarbeitung gemäß DSGVO.
+                    </span>
+                  </div>
                 </form>
               )}
             </div>
@@ -219,7 +226,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Legal Footer Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} Titus Schröder — Webdesign & Entwicklung · Peter-Wolfram-Str. 19, 85540 Haar
+            © {new Date().getFullYear()} Titus Schröder — Webdesign & Entwicklung · München & Region.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/impressum" className="hover:text-white transition-colors">

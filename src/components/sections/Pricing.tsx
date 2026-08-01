@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Star } from "lucide-react";
 import content from "@/data/content.json";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -16,10 +16,10 @@ export const Pricing: React.FC = () => {
             Transparente Preise
           </h2>
           <p className="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight mb-4">
-            Keine versteckten Gebühren. Keine Abo-Zwang.
+            Keine versteckten Gebühren. Kein Abo-Zwang.
           </p>
           <p className="text-slate-600 text-base sm:text-lg">
-            Klare Einmalpreise für die Erstellung Ihrer maßgeschneiderten Website in München.
+            Klare Einmalpreise für die Erstellung Ihrer maßgeschneiderten Website in München & Region.
           </p>
         </div>
 
@@ -32,9 +32,10 @@ export const Pricing: React.FC = () => {
             >
               <div>
                 {/* Badge if highlight */}
-                {tier.badge && (
-                  <div className="absolute top-4 right-4 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                    {tier.badge}
+                {tier.highlight && (
+                  <div className="absolute top-4 right-4 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                    <Star className="w-3.5 h-3.5 fill-white text-white" />
+                    <span>Beliebteste Wahl</span>
                   </div>
                 )}
 
@@ -52,7 +53,7 @@ export const Pricing: React.FC = () => {
                   )}
                 </div>
 
-                <div className="space-y-3.5 mb-8 border-t border-brand-border pt-6">
+                <div className="space-y-3.5 mb-8 border-t border-brand-border pt-6 text-left">
                   {tier.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center shrink-0 mt-0.5">
@@ -79,7 +80,7 @@ export const Pricing: React.FC = () => {
         </div>
 
         <div className="mt-12 text-center text-xs text-slate-400">
-          * Alle Preise verstehen sich als einmalige Festpreise. Hosting & Domain auf Wunsch inklusive.
+          * Alle Preise verstehen sich als einmalige Festpreise für die Website-Erstellung.
         </div>
       </div>
     </section>

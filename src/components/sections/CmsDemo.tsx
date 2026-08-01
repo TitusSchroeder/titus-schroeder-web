@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Edit3, Save, Lock, Unlock, Sparkles, CheckCircle2, RotateCcw, Phone, ArrowUpRight } from "lucide-react";
+import { Edit3, Save, Lock, Unlock, Sparkles, CheckCircle2, RotateCcw, Phone, ArrowUpRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export const CmsDemo: React.FC = () => {
@@ -44,7 +44,7 @@ export const CmsDemo: React.FC = () => {
 
       <div className="container mx-auto px-3 sm:px-6 max-w-6xl relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10 relative">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-blue text-white font-bold text-xs sm:text-sm mb-3 shadow-glow">
             <Sparkles className="w-4 h-4" />
             <span>Direkt-Bearbeitung Live-Demo</span>
@@ -72,14 +72,30 @@ export const CmsDemo: React.FC = () => {
               </span>
             </div>
 
-            {/* Hand-Drawn Arrow Callout pointing to the Edit Button */}
+            {/* Pure GREEN Curved Arrow pointing from header onto the Edit Button (NO TEXT) */}
             {!isEditing && (
-              <div className="hidden lg:flex items-center gap-2 absolute top-1 right-56 -translate-y-8 z-20 pointer-events-none animate-bounce">
-                <span className="text-xs font-extrabold text-amber-400 tracking-wide bg-slate-900 px-3 py-1 rounded-full border border-amber-400/40 shadow-lg">
-                  👈 Hier klicken zum Testen!
-                </span>
-                <svg className="w-6 h-6 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
+              <div className="hidden lg:block absolute -top-10 right-48 z-30 pointer-events-none">
+                <svg
+                  className="w-16 h-16 text-emerald-500 animate-bounce"
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M 20,10 Q 70,10 75,55"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M 60,45 L 75,60 L 90,45"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
             )}
@@ -95,7 +111,7 @@ export const CmsDemo: React.FC = () => {
                     className="text-xs font-bold text-emerald-700 bg-emerald-100 border border-emerald-300 px-3 py-1.5 rounded-full flex items-center gap-1.5"
                   >
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                    ✓ Live aktualisiert!
+                    <span>Änderung gespeichert!</span>
                   </motion.span>
                 )}
               </AnimatePresence>
@@ -106,7 +122,7 @@ export const CmsDemo: React.FC = () => {
                     onClick={handleSave}
                     variant="primary"
                     size="sm"
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-md"
+                    className="bg-emerald-600 border-emerald-600 hover:bg-transparent hover:text-emerald-600 text-white font-bold"
                   >
                     <Save className="w-3.5 h-3.5 mr-1.5" />
                     Speichern
@@ -117,7 +133,7 @@ export const CmsDemo: React.FC = () => {
                     className="text-slate-500 hover:text-slate-800 text-xs font-semibold px-2 py-1 flex items-center gap-1"
                     title="Standard zurücksetzen"
                   >
-                    <RotateCcw className="w-3 h-3" />
+                    <RotateCcw className="w-3.5 h-3.5" />
                   </button>
                 </>
               )}
@@ -128,8 +144,8 @@ export const CmsDemo: React.FC = () => {
                 size="sm"
                 className={
                   isEditing
-                    ? "bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold"
-                    : "bg-brand-blue hover:bg-brand-blueHover text-white font-bold shadow-glow"
+                    ? "bg-amber-500 border-amber-500 hover:bg-transparent hover:text-amber-500 text-slate-950 font-bold"
+                    : "bg-brand-blue border-brand-blue hover:bg-transparent hover:text-brand-blue text-white font-bold"
                 }
               >
                 {isEditing ? (
@@ -140,7 +156,7 @@ export const CmsDemo: React.FC = () => {
                 ) : (
                   <>
                     <Lock className="w-3.5 h-3.5 mr-1.5" />
-                    ⚡ Editiermodus starten
+                    Editiermodus starten
                   </>
                 )}
               </Button>
@@ -172,14 +188,14 @@ export const CmsDemo: React.FC = () => {
                 <span>Leistungen</span>
                 <span>Über uns</span>
                 <span>Projekte</span>
-                <span className="text-amber-400 font-bold">München</span>
+                <span className="text-amber-400 font-bold">München & Region</span>
               </div>
             </div>
 
             {/* Real Website Hero Section (Directly Editable in Place) */}
             <div className="relative z-10 p-6 sm:p-12 my-auto max-w-3xl text-left space-y-4">
               <div className="inline-block bg-amber-500/90 text-slate-950 font-extrabold text-xs uppercase tracking-wider px-3.5 py-1 rounded-md shadow-sm">
-                Schreinerei Meisterbetrieb · München Sendling
+                Schreinerei Meisterbetrieb · München & Region
               </div>
 
               {/* Directly Editable Headline */}
@@ -235,10 +251,11 @@ export const CmsDemo: React.FC = () => {
 
             {/* Real Website Bottom Footer Bar */}
             <div className="relative z-10 p-4 sm:p-6 border-t border-white/10 bg-slate-950/60 flex items-center justify-between text-xs text-slate-400 font-medium">
-              <span>©Obermeier Holzmanufaktur München · Handwerkskammer München</span>
+              <span>© Obermeier Holzmanufaktur München · Handwerkskammer München</span>
               {isEditing ? (
-                <span className="text-amber-400 font-bold animate-pulse">
-                  ✎ Tippen Sie direkt in den Text im Bild oben
+                <span className="text-amber-400 font-bold flex items-center gap-1">
+                  <Edit3 className="w-3 h-3" />
+                  Tippen Sie direkt in den Text im Bild oben
                 </span>
               ) : (
                 <span className="text-slate-300">

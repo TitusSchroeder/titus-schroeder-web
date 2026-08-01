@@ -50,7 +50,7 @@ export const About: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-extrabold text-white">Titus Schröder</h3>
-                  <p className="text-brand-blue font-bold text-xs mt-0.5">Digital Studio München</p>
+                  <p className="text-brand-blue font-bold text-xs mt-0.5">Webdesign & Entwicklung</p>
                 </div>
               </div>
 
@@ -66,7 +66,7 @@ export const About: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-bold">Persönlich in München</strong>
+                    <strong className="text-white block font-bold">Persönlich in München & Region</strong>
                     Beratung & Abstimmung auf Wunsch direkt vor Ort bei Ihrem Betrieb.
                   </div>
                 </div>
@@ -81,8 +81,8 @@ export const About: React.FC = () => {
               </div>
 
               <div className="pt-4 border-t border-slate-800 text-[11px] font-semibold text-slate-400 flex items-center justify-between">
-                <span>München Sendling & Region</span>
-                <span className="text-emerald-400 font-bold">✓ Festpreis-Garantie</span>
+                <span>München & Region</span>
+                <span className="text-emerald-400 font-bold">Festpreis-Garantie</span>
               </div>
             </motion.div>
           </div>

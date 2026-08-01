@@ -11,7 +11,7 @@ export const PillNav: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 40) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -30,17 +30,21 @@ export const PillNav: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-3 sm:p-4 transition-all duration-300 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-3 sm:p-4 pointer-events-none">
       <motion.nav
-        layout
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className={`pointer-events-auto flex items-center justify-between transition-colors duration-300 ${
+        initial={false}
+        animate={{
+          maxWidth: scrolled ? "52rem" : "68rem",
+          y: scrolled ? -2 : 0,
+        }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        className={`w-full pointer-events-auto flex items-center justify-between transition-colors duration-400 p-2 ${
           scrolled
-            ? "w-full max-w-3xl p-2 bg-white/75 backdrop-blur-2xl rounded-full border border-slate-200/80 shadow-pill"
-            : "w-full max-w-5xl p-2 sm:p-3 bg-transparent rounded-2xl"
+            ? "bg-white/80 backdrop-blur-2xl rounded-full border border-slate-200/90 shadow-pill"
+            : "bg-transparent rounded-2xl"
         }`}
       >
-        {/* Left Side: Brand Logo (Constantly TS Titus Schröder, exact equal 8px margin) */}
+        {/* Logo Left */}
         <Link
           href="/"
           className="flex items-center gap-2.5 font-bold text-brand-navy tracking-tight text-sm sm:text-base group shrink-0"
@@ -51,7 +55,7 @@ export const PillNav: React.FC = () => {
           <span className="font-extrabold text-brand-navy leading-none">Titus Schröder</span>
         </Link>
 
-        {/* Center: Desktop Nav Links (Always perfectly centered) */}
+        {/* Center Links */}
         <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700 h-9">
           {navLinks.map((link) => (
             <a
@@ -64,11 +68,11 @@ export const PillNav: React.FC = () => {
           ))}
         </div>
 
-        {/* Right Side: CTA Button (Exact equal 8px margin) */}
+        {/* Right CTA Button (Uses universal hover rule) */}
         <div className="flex items-center gap-2 shrink-0">
           <a
             href="#kontakt"
-            className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold bg-brand-blue text-white h-9 px-4 rounded-full hover:bg-brand-blueHover transition-all shadow-md hover:shadow-glow"
+            className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold bg-brand-blue text-white border border-brand-blue h-9 px-4 rounded-full hover:bg-transparent hover:text-brand-blue transition-all shadow-sm"
           >
             <span>Projekt anfragen</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -76,7 +80,7 @@ export const PillNav: React.FC = () => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden w-9 h-9 rounded-full text-brand-navy hover:bg-slate-100/80 flex items-center justify-center focus:outline-none"
+            className="md:hidden w-9 h-9 rounded-full text-brand-navy hover:bg-slate-100 flex items-center justify-center focus:outline-none"
             aria-label="Menü öffnen"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -105,7 +109,7 @@ export const PillNav: React.FC = () => {
           <a
             href="#kontakt"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-2 text-center text-sm font-bold bg-brand-blue text-white py-3 rounded-full hover:bg-brand-blueHover transition-colors shadow-glow"
+            className="mt-2 text-center text-sm font-bold bg-brand-blue text-white py-3 rounded-full hover:bg-transparent hover:text-brand-blue border border-brand-blue transition-all shadow-sm"
           >
             Projekt anfragen
           </a>

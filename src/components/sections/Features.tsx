@@ -67,7 +67,7 @@ export const Features: React.FC = () => {
                 <div className="flex items-center justify-between text-[10px] text-slate-400 mb-1">
                   <span className="truncate">google.de/search?q=schreinerei+muenchen</span>
                   <span className="text-emerald-700 font-bold flex items-center gap-1">
-                    <Star className="w-2.5 h-2.5 fill-emerald-500" /> Platz 1
+                    <Star className="w-2.5 h-2.5 fill-emerald-500 text-emerald-500" /> Platz 1
                   </span>
                 </div>
                 <div className="text-sm font-bold text-blue-700 truncate hover:underline cursor-pointer">
@@ -112,8 +112,8 @@ export const Features: React.FC = () => {
                 </div>
                 <div className="text-right">
                   <div className="text-xs text-slate-500 font-medium">Ladezeit</div>
-                  <div className="text-sm font-bold text-brand-navy bg-white border border-slate-200 px-3 py-1 rounded-lg mt-0.5 inline-block shadow-sm">
-                    ⚡ 0.38 s
+                  <div className="text-sm font-bold text-brand-navy bg-white border border-slate-200 px-3 py-1 rounded-lg mt-0.5 inline-flex items-center gap-1 shadow-sm">
+                    <Zap className="w-3.5 h-3.5 text-amber-500 fill-amber-500" /> 0.38 s
                   </div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export const Features: React.FC = () => {
                   </span>
                 </div>
                 <div className="text-xs text-amber-900 font-medium truncate">
-                  "Projektangebot für Küchenausbau München Sendling..."
+                  "Projektangebot für Küchenausbau München..."
                 </div>
               </div>
             </Card>

@@ -19,28 +19,31 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
+    "inline-flex items-center justify-center font-bold rounded-full transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer border";
 
   const sizeStyles = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-base",
-    lg: "px-8 py-4 text-lg font-semibold",
+    sm: "px-4 py-2 text-xs sm:text-sm",
+    md: "px-6 py-2.5 text-sm sm:text-base",
+    lg: "px-7 py-3.5 text-base sm:text-lg",
   };
 
+  // Rule:
+  // Primary (filled blue) -> hover: background disappears (transparent), text & border blue
+  // Secondary (filled navy) -> hover: background disappears (transparent), text & border navy
+  // Outline (unfilled) -> hover: gets filled background & white text
   const variantStyles = {
     primary:
-      "bg-brand-blue text-white hover:bg-brand-blueHover shadow-glow border border-transparent",
+      "bg-brand-blue text-white border-brand-blue hover:bg-transparent hover:text-brand-blue shadow-sm",
     secondary:
-      "bg-brand-navy text-white hover:bg-brand-navyLight border border-transparent",
+      "bg-brand-navy text-white border-brand-navy hover:bg-transparent hover:text-brand-navy shadow-sm",
     outline:
-      "bg-transparent text-brand-navy border border-brand-border hover:border-brand-blue hover:text-brand-blue",
+      "bg-transparent text-brand-navy border-brand-navy hover:bg-brand-navy hover:text-white shadow-sm",
     ghost:
-      "bg-transparent text-brand-navy hover:bg-brand-card hover:text-brand-blue",
+      "bg-transparent text-slate-700 border-transparent hover:bg-slate-100 hover:text-brand-navy",
   };
 
   return (
     <motion.button
-      whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(baseStyles, sizeStyles[size], variantStyles[variant], className)}
       {...props}
