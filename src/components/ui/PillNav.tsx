@@ -34,13 +34,12 @@ export const PillNav: React.FC = () => {
         initial={false}
         animate={{
           maxWidth: scrolled ? "52rem" : "68rem",
-          y: scrolled ? -2 : 0,
         }}
-        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className={`w-full pointer-events-auto flex items-center justify-between transition-all duration-300 p-2 ${
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`w-full pointer-events-auto flex items-center justify-between p-2 rounded-full transition-colors transition-shadow duration-300 ${
           scrolled
-            ? "bg-white/60 backdrop-blur-2xl rounded-full border border-slate-200/80 shadow-pill"
-            : "bg-white/30 backdrop-blur-md rounded-2xl border border-transparent"
+            ? "bg-white/60 backdrop-blur-2xl border border-slate-200/80 shadow-pill"
+            : "bg-white/30 backdrop-blur-md border border-transparent shadow-none"
         }`}
       >
         {/* Logo Left */}

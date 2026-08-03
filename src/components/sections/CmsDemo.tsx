@@ -43,12 +43,11 @@ export const CmsDemo: React.FC = () => {
             <span className="font-semibold text-slate-700">Bearbeiten</span> und tippen Sie einfach los.
           </p>
         </div>
-
-        {/* Hand-drawn arrow SVG: starts next to "direkt bearbeitbar" and lands at the Bearbeiten button */}
+        {/* User SVG Arrow: starts near "direkt bearbeitbar" and points directly to Bearbeiten button */}
         <AnimatePresence>
           {!isEditing && (
             <motion.img
-              key="hand-drawn-arrow"
+              key="user-svg-arrow"
               src="/images/arrow.svg"
               alt=""
               initial={{ opacity: 0, scale: 0.95 }}
@@ -57,16 +56,15 @@ export const CmsDemo: React.FC = () => {
               transition={{ delay: 0.2, duration: 0.4 }}
               className="absolute hidden lg:block pointer-events-none z-30 select-none"
               style={{
-                top: "6px",
-                right: "12px",
-                width: "230px",
-                height: "140px",
+                top: "10px",
+                right: "40px",
+                width: "220px",
+                height: "125px",
                 objectFit: "contain",
               }}
             />
           )}
         </AnimatePresence>
-
         {/* Browser Window */}
         <div className="rounded-2xl shadow-2xl border border-slate-200 overflow-hidden bg-white">
 

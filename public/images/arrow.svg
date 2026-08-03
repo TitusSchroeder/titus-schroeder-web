@@ -1,4 +1,8 @@
 <svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M 90,115 C 102,110 324,96 462,318 C 504,386 528,480 522,558" stroke="#1D4ED8" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 402,462 L 522,564 L 546,414" stroke="#1D4ED8" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Hand-drawn curved arrow with natural tapered line width and authentic arrowhead -->
+  <path d="M 95 115 C 155 102 340 105 460 310 C 495 370 515 450 518 555" stroke="#1D4ED8" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <!-- Left barb -->
+  <path d="M 370 440 C 400 460 450 500 518 555" stroke="#1D4ED8" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <!-- Right barb -->
+  <path d="M 548 395 C 542 450 532 505 518 555" stroke="#1D4ED8" stroke-width="26" stroke-linecap="round" fill="none"/>
 </svg>

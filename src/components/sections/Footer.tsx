@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
           {/* Overhauled Left Contact & Info Column */}
           <div className="lg:col-span-5 space-y-8 text-left">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-brand-blue font-bold text-xs mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-blue-500/50 text-white font-bold text-xs mb-4 shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-brand-blue" />
                 <span>100% Unverbindlich & Persönlich</span>
               </div>
@@ -66,58 +66,40 @@ export const Footer: React.FC = () => {
               </p>
             </div>
 
-            {/* Structured Contact Cards */}
+            {/* Structured Contact Cards & Guarantees */}
             <div className="space-y-4 pt-2">
               {/* Mail Card */}
               <a
                 href="mailto:titus@schroeder-muc.de"
-                className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 hover:border-brand-blue/60 transition-all flex items-center gap-4 group block"
+                className="p-5 rounded-2xl bg-slate-900/90 border border-blue-500/40 hover:border-brand-blue transition-all flex items-center gap-4 group block shadow-md"
               >
-                <div className="w-11 h-11 rounded-xl bg-brand-blue/20 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors shrink-0">
-                  <Mail className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center shrink-0">
+                  <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-300 block mb-0.5">
                     Direkte E-Mail
                   </span>
-                  <span className="text-sm sm:text-base font-bold text-white group-hover:text-brand-blue transition-colors">
+                  <span className="text-base sm:text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
                     titus@schroeder-muc.de
                   </span>
                 </div>
               </a>
 
-              {/* Location & Address Card */}
-              <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-slate-700 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="w-5 h-5" />
+              {/* Guarantees Box */}
+              <div className="p-5 rounded-2xl bg-slate-900/90 border border-blue-500/40 space-y-3.5 text-sm font-semibold text-white shadow-md">
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-brand-blue shrink-0" />
+                  <span>Rückmeldung innerhalb von 24 Stunden</span>
                 </div>
-                <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
-                    Standort & Region
-                  </span>
-                  <span className="text-sm font-bold text-white block">
-                    Titus Schröder — Webdesign & Entwicklung
-                  </span>
-                  <span className="text-xs text-slate-300 block mt-0.5">
-                    Peter-Wolfram-Str. 19 · 85540 Haar (München)
-                  </span>
+                <div className="flex items-center gap-3">
+                  <ShieldCheck className="w-5 h-5 text-brand-blue shrink-0" />
+                  <span>Festpreis-Garantie ohne versteckte Kosten</span>
                 </div>
-              </div>
-            </div>
-
-            {/* Quick Guarantee Badges */}
-            <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3 text-xs text-slate-300">
-              <div className="flex items-center gap-2.5 font-semibold text-white">
-                <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Rückmeldung innerhalb von 24 Stunden</span>
-              </div>
-              <div className="flex items-center gap-2.5 font-semibold text-white">
-                <ShieldCheck className="w-4 h-4 text-brand-blue shrink-0" />
-                <span>Festpreis-Garantie ohne versteckte Kosten</span>
-              </div>
-              <div className="flex items-center gap-2.5 font-semibold text-white">
-                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Vor-Ort-Termine in München & Region möglich</span>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-brand-blue shrink-0" />
+                  <span>Vor-Ort-Termine in München & Region möglich</span>
+                </div>
               </div>
             </div>
           </div>
@@ -255,7 +237,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Legal Footer Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} Titus Schröder — Webdesign & Entwicklung · Peter-Wolfram-Str. 19, 85540 Haar.
+            © {new Date().getFullYear()} Titus Schröder — Webdesign & Entwicklung.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/impressum" className="hover:text-white transition-colors">
